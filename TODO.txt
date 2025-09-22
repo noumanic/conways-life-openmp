@@ -1,0 +1,61 @@
+# Conway's Game of Life with OpenMP — To-Do List
+
+## 1. Serial Implementation
+
+* [ ] Write a serial C/C++ program to simulate Conway's Game of Life on a 2D grid.
+* [ ] Use a fixed grid size of **100x100**.
+* [ ] Initialize the grid with:
+
+  * Center **10x10 area** set to live cells (`*`)
+  * All other cells set to dead cells (`.`)
+* [ ] Implement the four rules of the Game of Life:
+
+  * Underpopulation
+  * Survival
+  * Overpopulation
+  * Reproduction
+* [ ] Apply **toroidal boundary conditions** (grid wraps around).
+* [ ] Simulate **100 generations**.
+* [ ] Display the grid after the final generation using text-based output (`.` for dead, `*` for live).
+
+---
+
+## 2. Parallel Implementation
+
+* [ ] Parallelize the game logic by updating each row in parallel.
+* [ ] Ensure proper synchronization to avoid race conditions when updating cell states.
+
+---
+
+## 3. Parallel Implementation (Static Scheduling)
+
+* [ ] Use **static scheduling** with a chunk size of 1.
+
+---
+
+## 4. Parallel Implementation (Guided Scheduling)
+
+* [ ] Use **guided scheduling** with a chunk size of 1.
+
+---
+
+## 5. Performance Analysis
+
+* [ ] Measure execution time of:
+
+  * Serial version
+  * Static scheduled parallel version
+  * Guided scheduled parallel version
+* [ ] Repeat measurements **5 times** for each version and calculate averages.
+* [ ] Compute speedup achieved by both parallel versions relative to serial.
+* [ ] Compare static vs. guided scheduling performance.
+* [ ] Analyze impact of **removing the critical section** in both parallel versions.
+* [ ] Report any inconsistencies in the final grid.
+
+---
+
+
+## 6. Bonus Part
+
+* [ ] Create a **graphical visualization** of the Game of Life using a graphics library (e.g., SDL2).
+* [ ] Display the **evolution of the simulation** over time.
